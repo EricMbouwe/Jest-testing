@@ -53,17 +53,21 @@ const Game = (player1, player2, currentPlayer, gameboard, counter) => {
       ) {
         displayController.displayOutcome(currentPlayer);
         displayController.endGame(markBox);
+        return 1
       }
     }
+    return 0
   }
 
   const draw = () => {
     if (counter === 9 && winner() === undefined) {
       displayController.displayOutcome();
+      return 1
     }
+    return 0
   };
 
-  return { markBox, switchPlayer };
+  return { markBox, switchPlayer, winner, draw };
 };
 
 export default Game;
