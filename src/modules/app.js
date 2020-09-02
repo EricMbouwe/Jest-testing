@@ -45,26 +45,26 @@ const Game = (player1, player2, currentPlayer, gameboard, counter) => {
       const second = gameboard[winArr[i][1]];
       const third = gameboard[winArr[i][2]];
       if (
-        first !== ''
-        && second !== ''
-        && third !== ''
-        && first === second
-        && second === third
+        first !== '' &&
+        second !== '' &&
+        third !== '' &&
+        first === second &&
+        second === third
       ) {
         displayController.displayOutcome(currentPlayer);
         displayController.endGame(markBox);
-        return 1
+        return 1;
       }
     }
-    return 0
+    return 0;
   }
 
   const draw = () => {
     if (counter === 9 && winner() === undefined) {
       displayController.displayOutcome();
-      return 1
+      return 1;
     }
-    return 0
+    return 0;
   };
 
   return { markBox, switchPlayer, winner, draw };
